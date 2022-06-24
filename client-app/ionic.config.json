@@ -1,0 +1,7 @@
+{
+  "name": "akanlu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

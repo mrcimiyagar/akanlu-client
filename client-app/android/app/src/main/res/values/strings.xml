@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">akanlu</string>
+    <string name="title_activity_main">akanlu</string>
+    <string name="package_name">anaknlu.mobile.app</string>
+    <string name="custom_url_scheme">anaknlu.mobile.app</string>
+</resources>

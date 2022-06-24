@@ -1,0 +1,13 @@
+{
+	"appId": "anaknlu.mobile.app",
+	"appName": "akanlu",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "build",
+	"cordova": {},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	}
+}
