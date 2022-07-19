@@ -82,7 +82,7 @@ export default function ProfileTag(props) {
                   tblUser_Email3:
                     document.getElementById("tblUser_Email3").value,
                   tblUser_Yahoo: document.getElementById("tblUser_Yahoo").value,
-                  //tblUser_Password: document.getElementById('tblUser_Password').value
+                  tblUser_NewPassword: document.getElementById('tblUser_Password').value
                 };
 
                 var requestOptions = {
@@ -100,6 +100,7 @@ export default function ProfileTag(props) {
                 )
                   .then((response) => response.text())
                   .then((result) => {
+                    localStorage.setItem('password', document.getElementById('tblUser_Password').value);
                     console.log(result);
                     setBSO(false);
                     setTimeout(() => {

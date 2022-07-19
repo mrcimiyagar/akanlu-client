@@ -182,15 +182,6 @@ export default function Dashboard(props) {
       <Pricing open={showPricing} setOpen={setShowPricing} />
 
       <div style={{ width: "100%", height: 100 }} />
-
-      {priceData !== undefined ? (
-        <PriceDialog
-          data={priceData}
-          onClose={() => {
-            setPriceData(undefined);
-          }}
-        />
-      ) : null}
     </div>
   );
 }

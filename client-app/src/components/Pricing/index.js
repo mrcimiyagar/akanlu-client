@@ -8,6 +8,7 @@ import DropDown from "../DropDown";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import MobileDatePicker from "@mui/lab/MobileDatePicker";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import PriceDialog from "../PriceDialog";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -397,6 +398,15 @@ export default function Pricing(props) {
           </div>
         </div>
       </div>
+
+      {priceData !== undefined ? (
+        <PriceDialog
+          data={priceData}
+          onClose={() => {
+            setPriceData(undefined);
+          }}
+        />
+      ) : null}
     </Dialog>
   );
 }
