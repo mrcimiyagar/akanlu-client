@@ -13,6 +13,7 @@ import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import RoomCard from "../RoomCard";
+import { CardHeader, Rating, Toolbar } from "@mui/material";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -120,6 +121,7 @@ export default function HotelProfileDialog(props) {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
+        <Toolbar>
         <IconButton
           style={{ width: 56, height: 56 }}
           onClick={() => {
@@ -130,29 +132,19 @@ export default function HotelProfileDialog(props) {
         >
           <Close style={{ fill: "#fff" }} />
         </IconButton>
+        <CardHeader
+        title={props.hotel.hotelName}
+        subheader={<div>
+          <div style={{ display: 'flex' }}><Rating value={Number(props.hotel.hotelStar)} /><Typography>{props.hotel.hotelBooking} of 10</Typography></div>
+          <Typography variant={'caption'} style={{fontWeight: 'bold', color: '#fff'}}>
+            {props.hotel.hotelAddress}
+          </Typography>
+        </div>}
+      />
+        </Toolbar>
       </AppBar>
       <div>
-        <img
-          alt={"Hotel Photo"}
-          src={
-            props.hotel === undefined
-              ? undefined
-              : "https://akanlu.com/WebFile/Gallery/" + props.hotel.hotellogo
-          }
-          style={{ width: "100%", height: 325, marginTop: 56 }}
-        />
-        <Typography
-          style={{
-            width: "calc(100% - 32px)",
-            marginLeft: 16,
-            marginRight: 16,
-            marginTop: 16,
-            textAlign: "right",
-            color: "#fff",
-          }}
-        >
-          {props.hotel === undefined ? null : props.hotel.HotelDescription}
-        </Typography>
+        <div style={{width: '100%', height: 144}}></div>
         <div
           style={{
             width: "100%",

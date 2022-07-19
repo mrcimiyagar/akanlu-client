@@ -13,6 +13,7 @@ import { red } from '@mui/material/colors';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Rating } from '@mui/material';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,20 +36,15 @@ export default function HotelCard(props) {
   return (
     <Card onClick={() => {
       props.onHotelSelected(props.hotel.hotelID);
-    }} style={{backgroundColor: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(10px)', width: 'calc(100% - 32px)', marginLeft: 16, marginRight: 16, marginTop: 16}}>
+    }} style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(10px)', width: 'calc(100% - 32px)', marginLeft: 16, marginRight: 16, marginTop: 16, borderRadius: 16 }}>
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            A
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Admin of Akanlu"
-        subheader="February 26, 2022"
+        title={props.hotel.hotelName}
+        subheader={<div>
+          <div style={{ display: 'flex' }}><Rating value={Number(props.hotel.hotelStar)} /><Typography>{props.hotel.hotelBooking} of 10</Typography></div>
+          <Typography variant={'caption'} style={{fontWeight: 'bold'}}>
+            {props.hotel.hotelAddress}
+          </Typography>
+        </div>}
       />
       <CardMedia
         component="img"
@@ -56,19 +52,6 @@ export default function HotelCard(props) {
         image={"https://akanlu.com/WebFile/Gallery/" + props.hotel.hotellogo}
         alt="Hotel Photo"
       />
-      <CardContent>
-        <Typography variant="body" color="text.primary">
-          {props.hotel.hotelName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" style={{textAlign: 'right'}}>
-          {props.hotel.hotelDescription}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="share" onClick={(e) => {e.stopPropagation(); e.preventDefault();}}>
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
     </Card>
   );
 }
