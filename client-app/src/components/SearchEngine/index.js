@@ -195,7 +195,7 @@ export default function SearchEngine(props) {
           width: !searchBarFixed ? "calc(100% - 64px)" : "100%",
           marginLeft: searchBarFixed ? 0 : 32,
           marginRight: searchBarFixed ? 0 : 32,
-          marginTop: searchBarFixed ? 0 : 32,
+          marginTop: 256,
           position: !searchBarFixed ? "relative" : "fixed",
           zIndex: 2,
         }}
@@ -204,16 +204,6 @@ export default function SearchEngine(props) {
           setBSO(true);
         }}
       />
-
-      <SearchEngineSections topGap={searchBarFixed ? 32 + 64 : 32} />
-
-      <SearchEngineSections />
-
-      <SearchEngineSections />
-
-      <SearchEngineSections />
-
-      <SearchEngineSections />
 
       <HotelsDialog
         selectedCityId={selectedCityId}

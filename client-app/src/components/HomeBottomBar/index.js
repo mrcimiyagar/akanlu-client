@@ -59,35 +59,21 @@ export default function HomeBottomBar(props) {
         icon={<DesktopMac />}
       />
       <BottomNavigationAction
-        value={1}
-        classes={classesAction}
-        label="Hotels"
-        icon={<TravelExplore />}
-        style={{ marginRight: -24 }}
-      />
-      <BottomNavigationAction
         value={2}
         classes={classesAction}
         label=""
         icon={
           <Fab color={"secondary"} style={{ marginTop: -56 }} variant={'extended'}>
-            New Request
+            + Request
           </Fab>
         }
         style={{ marginRight: -24 }}
       />
       <BottomNavigationAction
-        value={3}
+        value={1}
         classes={classesAction}
-        label="مالی"
-        icon={<AttachMoney />}
-        style={{ marginRight: -24 }}
-      />
-      <BottomNavigationAction
-        value={4}
-        classes={classesAction}
-        label="Settings"
-        icon={<Settings />}
+        label="Hotels"
+        icon={<TravelExplore />}
         style={{ marginRight: -24 }}
       />
     </BottomNavigation>
