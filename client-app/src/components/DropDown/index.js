@@ -45,7 +45,7 @@ export default function DropDown(props) {
           style={{ zIndex: 99999 }}
         >
           <MenuItem value={0} style={{ zIndex: 99999 }}>
-            <em>هیچکدام</em>
+            <em>ٔNothing</em>
           </MenuItem>
           {props.items.map((item) => {
             return (

@@ -353,8 +353,8 @@ export default function RequestsTable(props) {
                     >
                       <TableCell align="center">{row.date}</TableCell>
                       <TableCell align="center">{row.process}</TableCell>
-                      <TableCell align="center">{row.price}</TableCell>
-                      <TableCell align="center">{row.paid}</TableCell>
+                      <TableCell align="center">$ {row.price}</TableCell>
+                      <TableCell align="center">$ {row.paid}</TableCell>
                     </TableRow>
                   );
                 })}

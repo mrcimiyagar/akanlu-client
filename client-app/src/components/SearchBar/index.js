@@ -34,8 +34,8 @@ export default function SearchBar(props) {
 
   return (
     <Paper component="form" className={classes.root} {...props}>
-      <Typography style={{marginRight: 16}}>
-      جستجوی هتل
+      <Typography style={{marginRight: 16, marginLeft: 16}}>
+      Search Hotels
       </Typography>
       <div style={{flex: 1}} />
       <IconButton className={classes.iconButton} aria-label="search">

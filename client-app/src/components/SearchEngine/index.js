@@ -64,25 +64,14 @@ export default function SearchEngine(props) {
           backdropFilter: "blur(10px)",
         }}
       >
-        <TextField
-          id="profileEditFirstName"
-          variant={"outlined"}
-          label={"جستجوی هتل"}
-          style={{
-            marginTop: 16 + 76 + 8,
-            marginLeft: 16,
-            marginRight: 16,
-            width: "calc(100% - 32px)",
-          }}
-        />
         <DropDown
           compId={"countries"}
-          label={"کشور"}
+          label={"Country"}
           items={countries}
           defaultSelection={selectedCountryId}
           marginLeft={16}
           marginRight={16}
-          marginTop={16}
+          marginTop={16 + 76 + 8}
           width={"calc(100% - 32px)"}
           onItemSelected={(id) => {
             setSelectedCountryId(id);
@@ -90,7 +79,7 @@ export default function SearchEngine(props) {
         />
         <DropDown
           compId={"cities"}
-          label={"شهر"}
+          label={"City"}
           items={cities}
           defaultSelection={selectedCityId}
           marginLeft={16}

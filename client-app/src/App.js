@@ -47,7 +47,7 @@ function App() {
           top: 0,
           right: 0,
           bottom: 0,
-          direction: "rtl"
+          direction: "ltr"
         }}
       >
         <img alt={'wallpaper'} src={Wallpaper} style={{width: '100%', height: '100%', position: 'fixed', left: 0, top: 0}} />
@@ -104,7 +104,7 @@ function App() {
           top: 0,
           right: 0,
           bottom: 0,
-          direction: "rtl",
+          direction: "ltr",
           backgroundColor: "#66b",
         }}
       >

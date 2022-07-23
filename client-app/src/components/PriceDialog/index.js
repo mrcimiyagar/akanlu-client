@@ -3,14 +3,15 @@ import {
   Button,
   Dialog,
   IconButton,
+  InputBase,
   Slide,
   TextField,
   Typography,
 } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React from "react";
 import Close from "@mui/icons-material/Close";
-import RoomCard from "../RoomCard";
-import { Card, Divider } from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia, Divider } from "@mui/material";
+import ExtensionIcon from '@mui/icons-material/Extension';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -19,7 +20,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const CustomText = (props) => {
   return (
     <div style={{ width: "100%" }}>
-      <Typography style={{ marginTop: 8, marginBottomm: 8, marginLeft: 16 }}>
+      <Typography style={{ marginTop: 8, marginBottomm: 8, marginLeft: 16, fontSize: props.fontSize }}>
         {props.children}
       </Typography>
       <Divider style={{ width: "100%", marginTop: 8, marginBottomm: 8 }} />
@@ -27,7 +28,7 @@ const CustomText = (props) => {
   );
 };
 
-export default function PriceDialog({onClose, data}) {
+export default function PriceDialog({ onClose, data }) {
   const [show, setShow] = React.useState(true);
   return (
     <Dialog
@@ -62,7 +63,10 @@ export default function PriceDialog({onClose, data}) {
           style={{ width: 56, height: 56 }}
           onClick={() => {
             if (onClose !== undefined) {
-              onClose();
+              setShow(false);
+              setTimeout(() => {
+                onClose();
+              }, 250);
             }
           }}
         >
@@ -71,33 +75,32 @@ export default function PriceDialog({onClose, data}) {
       </AppBar>
       <div style={{ width: "100%", height: 56 }} />
       <div style={{ width: "calc(100% - 32px)", margin: 16 }}>
-        <Card style={{ width: "100%", marginTop: 16, borderRadius: 16 }}>
+        <div style={{ width: "100%", marginTop: 72, borderRadius: 16 }}>
           <CustomText>
             Currency Price Riali: {data.currencyPriceRiali}
           </CustomText>
-          <CustomText>Room Price: {data.roomPrice}</CustomText>
+          <CustomText>Room Price: $ {data.roomPrice}</CustomText>
           <CustomText>
-            Total Room Price Dollar: {data.totalRoomPriceDollar}
+            Total Room Price Dollar: $ {data.totalRoomPriceDollar}
           </CustomText>
           <CustomText>
             Total Room Price Riali: {data.totalRoomPriceRiali}
           </CustomText>
           {data.availableServices.map((service) => (
-            <Card style={{ width: "100%", marginTop: 16, borderRadius: 16 }}>
-              <CustomText>Name: {service.extraEmkanat_Name}</CustomText>
-              <CustomText>Price: {service.extra_Value}</CustomText>
-              <TextField variant={"outlined"} label={"0"} />
-              <div style={{ display: "flex" }}>
-                <Button style={{ width: "49%" }} variant={"outlined"}>
-                  +
-                </Button>
-                <Button style={{ width: "49%" }} variant={"outlined"}>
-                  -
-                </Button>
-              </div>
+            <Card style={{ width: "100%", marginTop: 16, borderRadius: 16, backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'relative' }}>
+              <ExtensionIcon style={{fill: '#fff', width: 72, height: 72, position: 'absolute', left: '50%', transform: 'translate(-50%, 56px)'}}/>
+              <CardContent style={{color: '#fff', marginTop: 72 + 56 + 16}}>
+                <CustomText fontSize={13}>{service.extraEmkanat_Name}</CustomText>
+                <CustomText>Price: $ {service.extra_Value}</CustomText>
+              </CardContent>
+              <CardActions>
+                <InputBase style={{width: 'calc(100% - 16px)', marginLeft: 16, marginRight: 16, backgroundColor: '#fff', paddingLeft: 16, borderRadius: 24}} defaultValue={"0"} />
+                <Button size="large" style={{color: '#fff', fontSize: 23}}>+</Button>
+                <Button size="large" style={{color: '#fff', fontSize: 23}}>-</Button>
+              </CardActions>
             </Card>
           ))}
-        </Card>
+        </div>
       </div>
     </Dialog>
   );

@@ -65,7 +65,7 @@ export default function HotelProfileDialog(props) {
       };
       fetch(
         "https://akanlu.com:5001/api/Hotels/GetHotelRoomsByHotelId/?hotelid=" +
-          props.hotel.hotelID,
+        props.hotel.hotelID,
         requestOptions
       )
         .then((response) => response.json())
@@ -79,7 +79,7 @@ export default function HotelProfileDialog(props) {
       };
       fetch(
         "https://akanlu.com:5001/api/Hotels/GetHotelImagesByHotelId/?hotelid=" +
-          props.hotel.hotelID,
+        props.hotel.hotelID,
         requestOptions2
       )
         .then((response) => response.json())
@@ -122,29 +122,32 @@ export default function HotelProfileDialog(props) {
         }}
       >
         <Toolbar>
-        <IconButton
-          style={{ width: 56, height: 56 }}
-          onClick={() => {
-            if (props.onClose !== undefined) {
-              props.onClose();
-            }
-          }}
-        >
-          <Close style={{ fill: "#fff" }} />
-        </IconButton>
-        <CardHeader
-        title={props.hotel.hotelName}
-        subheader={<div>
-          <div style={{ display: 'flex' }}><Rating value={Number(props.hotel.hotelStar)} /><Typography>{props.hotel.hotelBooking} of 10</Typography></div>
-          <Typography variant={'caption'} style={{fontWeight: 'bold', color: '#fff'}}>
-            {props.hotel.hotelAddress}
-          </Typography>
-        </div>}
-      />
+          <IconButton
+            style={{ width: 56, height: 56 }}
+            onClick={() => {
+              if (props.onClose !== undefined) {
+                props.onClose();
+              }
+            }}
+          >
+            <Close style={{ fill: "#fff" }} />
+          </IconButton>
+          <CardHeader
+            title={props.hotel !== undefined ? props.hotel.hotelName : ''}
+            subheader={<div>
+              <div style={{ display: 'flex' }}>
+                <Rating value={props.hotel !== undefined ? Number(props.hotel.hotelStar) : 0} />
+                <Typography style={{ color: '#fff' }}>{props.hotel !== undefined ? props.hotel.hotelBooking : ''} of 10</Typography>
+              </div>
+              <Typography variant={'caption'} style={{ fontWeight: 'bold', color: '#fff' }}>
+                {props.hotel !== undefined ? props.hotel.hotelAddress : ''}
+              </Typography>
+            </div>}
+          />
         </Toolbar>
       </AppBar>
       <div>
-        <div style={{width: '100%', height: 144}}></div>
+        <div style={{ width: '100%', height: 144 }}></div>
         <div
           style={{
             width: "100%",

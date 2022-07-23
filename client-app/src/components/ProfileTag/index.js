@@ -17,6 +17,7 @@ import {
 } from "../../App";
 import AvatarPic from "../../images/logo.png";
 import Save from "@mui/icons-material/Save";
+import { InputBase } from "@mui/material";
 
 export default function ProfileTag(props) {
   const [title, setTitle] = React.useState('');
@@ -124,132 +125,168 @@ export default function ProfileTag(props) {
                 backdropFilter: "blur(10px)",
               }}
             >
-              <TextField
+              <InputBase
                 id="tblUser_Name"
-                variant={"outlined"}
-                label={"نام"}
+                placeholder={"نام"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16 + 76 + 8,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Modir"
-                variant={"outlined"}
-                label={"مدیر"}
+                placeholder={"مدیر"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Email"
-                variant={"outlined"}
-                label={"ایمیل"}
+                placeholder={"ایمیل"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_state"
-                variant={"outlined"}
-                label={"شهر"}
+                placeholder={"شهر"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Tel"
-                variant={"outlined"}
-                label={"تلفن"}
+                placeholder={"تلفن"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Mobile"
-                variant={"outlined"}
-                label={"موبایل"}
+                placeholder={"موبایل"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_AkanluRabet"
-                variant={"outlined"}
-                label={"رابط آکانلو"}
+                placeholder={"رابط آکانلو"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Email2"
-                variant={"outlined"}
-                label={"ایمیل 2"}
+                placeholder={"ایمیل 2"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_WhatsAppNumber"
-                variant={"outlined"}
-                label={"واتس اپ"}
+                placeholder={"واتس اپ"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Email3"
-                variant={"outlined"}
-                label={"ایمیل 3"}
+                placeholder={"ایمیل 3"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Yahoo"
-                variant={"outlined"}
-                label={"یاهو"}
+                placeholder={"یاهو"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
                   width: "calc(100% - 32px)",
                 }}
               />
-              <TextField
+              <InputBase
                 id="tblUser_Password"
-                variant={"outlined"}
-                label={"پسورد"}
+                placeholder={"پسورد"}
                 style={{
+                  backgroundColor: 'rgb(255, 255, 255, 0.5)',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginTop: 16,
                   marginLeft: 16,
                   marginRight: 16,
@@ -259,6 +296,10 @@ export default function ProfileTag(props) {
               <Button
                 variant="outlined"
                 style={{
+                  backgroundColor: '#fff',
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  borderRadius: 24,
                   marginRight: 16,
                   marginLeft: 16,
                   marginTop: 32,
@@ -314,19 +355,19 @@ export default function ProfileTag(props) {
       style={{
         height: 40,
         width: "auto",
-        paddingLeft: 24,
         top: 32,
-        right: 32,
+        left: 32,
         position: "fixed",
         display: "flex",
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         backdropFilter: "blur(10px)",
         borderRadius: 24,
         zIndex: props.zIndex,
+        paddingRight: 24
       }}
     >
       <Avatar src={AvatarPic} />
-      <Typography style={{ marginTop: 8, marginRight: 8 }}>
+      <Typography style={{ marginTop: 8, marginLeft: 8 }}>
         {title}
       </Typography>
     </Card>

@@ -255,19 +255,9 @@ export default function Pricing(props) {
               overflowY: "auto"
             }}
           >
-            <TextField
-              id="profileEditFirstName"
-              variant={"outlined"}
-              label={"جستجوی هتل"}
-              style={{
-                marginLeft: 16,
-                marginRight: 16,
-                width: "calc(100% - 32px)",
-              }}
-            />
             <DropDown
               compId={"countries"}
-              label={"کشور"}
+              label={"Country"}
               items={countries}
               defaultSelection={selectedCountryId2}
               marginLeft={16}
@@ -280,7 +270,7 @@ export default function Pricing(props) {
             />
             <DropDown
               compId={"cities"}
-              label={"شهر"}
+              label={"City"}
               items={cities2}
               defaultSelection={selectedCityId2}
               marginLeft={16}
@@ -293,7 +283,7 @@ export default function Pricing(props) {
             />
             <DropDown
               compId={"hotels"}
-              label={"هتل"}
+              label={"Hotel"}
               items={hotels}
               defaultSelection={selectedHotelId}
               marginLeft={16}
@@ -306,7 +296,7 @@ export default function Pricing(props) {
             />
             <DropDown
               compId={"rooms"}
-              label={"اتاق"}
+              label={"Room"}
               items={rooms}
               defaultSelection={selectedRoomId}
               marginLeft={16}
@@ -319,7 +309,7 @@ export default function Pricing(props) {
             />
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <MobileDatePicker
-                label="از تاریخ"
+                label="From"
                 inputFormat="MM/dd/yyyy"
                 value={from}
                 onChange={setFrom}
@@ -337,7 +327,7 @@ export default function Pricing(props) {
               />
               <br />
               <MobileDatePicker
-                label="تا تاریخ"
+                label="To"
                 inputFormat="MM/dd/yyyy"
                 value={to}
                 onChange={setTo}

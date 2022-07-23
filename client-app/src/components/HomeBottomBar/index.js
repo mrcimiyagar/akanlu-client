@@ -63,18 +63,16 @@ export default function HomeBottomBar(props) {
         classes={classesAction}
         label=""
         icon={
-          <Fab color={"secondary"} style={{ marginTop: -56 }} variant={'extended'}>
+          <Fab color={"secondary"} style={{width: 112, marginTop: -56 }} variant={'extended'}>
             + Request
           </Fab>
         }
-        style={{ marginRight: -24 }}
       />
       <BottomNavigationAction
         value={1}
         classes={classesAction}
         label="Hotels"
         icon={<TravelExplore />}
-        style={{ marginRight: -24 }}
       />
     </BottomNavigation>
   );

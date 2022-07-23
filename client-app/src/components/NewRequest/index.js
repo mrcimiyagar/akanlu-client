@@ -217,7 +217,7 @@ export default function NewRequest(props) {
           textAlign: "center",
         }}
       >
-        <Typography style={{ marginTop: 24 }}>درخواست جدید</Typography>
+        <Typography style={{ marginTop: 24 }}>New Request</Typography>
         <IconButton
           style={{ position: "fixed", left: 16, top: 12 }}
           onClick={() => {
@@ -243,7 +243,7 @@ export default function NewRequest(props) {
       <DropDown
         items={countries}
         compId={"countries"}
-        label={"کشور"}
+        label={"Country"}
         marginLeft={16}
         marginRight={16}
         marginTop={16}
@@ -255,7 +255,7 @@ export default function NewRequest(props) {
       <DropDown
         items={cities2}
         compId={"cities"}
-        label={"شهر"}
+        label={"City"}
         marginLeft={16}
         marginRight={16}
         marginTop={16}
@@ -267,7 +267,7 @@ export default function NewRequest(props) {
       <DropDown
         items={hotels}
         compId={"hotels"}
-        label={"هتل"}
+        label={"Hotel"}
         marginLeft={16}
         marginRight={16}
         marginTop={16}
@@ -279,7 +279,7 @@ export default function NewRequest(props) {
       <DropDown
         items={rooms}
         compId={"rooms"}
-        label={"اتاق"}
+        label={"Room"}
         marginLeft={16}
         marginRight={16}
         marginTop={16}
@@ -329,7 +329,7 @@ export default function NewRequest(props) {
       </Typography>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <MobileDatePicker
-          label="از تاریخ"
+          label="From"
           inputFormat="MM/dd/yyyy"
           value={from}
           onChange={setFrom}
@@ -347,7 +347,7 @@ export default function NewRequest(props) {
         />
         <br />
         <MobileDatePicker
-          label="تا تاریخ"
+          label="To"
           inputFormat="MM/dd/yyyy"
           value={to}
           onChange={setTo}
