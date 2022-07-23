@@ -134,7 +134,7 @@ function Auth(props) {
                 transition: "top 1s",
               }}
             >
-              به آکانلو خوش آمدید
+              Welcome To Akanlu
             </Typography>
           </div>
           <Typography style={{marginTop: 32}}>Login Information</Typography>
@@ -367,7 +367,7 @@ function Auth(props) {
               }}
             >
               <VpnKeyIcon sx={{ mr: 1 }} />
-              <div style={{ marginRight: 8 }}>ثبت نام</div>
+              <div style={{ marginRight: 8 }}>Register</div>
             </Fab>
             <Fab
               color={"primary"}
@@ -375,7 +375,7 @@ function Auth(props) {
               onClick={() => setRegister(false)}
             >
               <ListAltIcon sx={{ mr: 1 }} />
-              <div style={{ marginRight: 8 }}>به لاگین</div>
+              <div style={{ marginRight: 8 }}>To Login</div>
             </Fab>
           </div>
         </div>
@@ -425,13 +425,13 @@ function Auth(props) {
                 transition: "top 1s",
               }}
             >
-              به آکانلو خوش آمدید
+              Welcome to Akanlu
             </Typography>
           </div>
           <WhiteColorTextField
             className={classes.root}
             id="loginUsername"
-            label="نام کاربری"
+            label="Username"
             variant="filled"
             style={{ marginTop: 24, width: "100%", color: "#fff" }}
           />
@@ -439,7 +439,7 @@ function Auth(props) {
             className={classes.root}
             type="password"
             id="loginPassword"
-            label="رمز عبور"
+            label="Password"
             variant="filled"
             style={{ marginTop: 24, width: "100%", color: "#fff" }}
           />
@@ -472,14 +472,14 @@ function Auth(props) {
                       if (result === "true") {
                         setAuthenticated(true);
                       } else {
-                        alert("اطلاعات ورود صحبح نیست.");
+                        alert("Login information is wrong.");
                       }
                     });
                 }
               }}
             >
               <VpnKeyIcon />
-              <div style={{ marginRight: 8 }}>لاگین</div>
+              <div style={{ marginRight: 8 }}>Login</div>
             </Fab>
             <Fab
               color={"primary"}
@@ -487,7 +487,7 @@ function Auth(props) {
               onClick={() => setRegister(true)}
             >
               <ListAltIcon />
-              <div style={{ marginRight: 8 }}>به ثبت نام</div>
+              <div style={{ marginRight: 8 }}>To Register</div>
             </Fab>
           </div>
         </div>
