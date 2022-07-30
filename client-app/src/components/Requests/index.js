@@ -54,7 +54,7 @@ export default function Requests(props) {
       >
         <Close style={{ fill: "#fff" }} />
       </IconButton>
-      <RequestsTable requests={requests} onVoucherClicked={props.onVoucherClicked} onDetailsClicked={props.onDetailsClicked} />
+      <RequestsTable requests={requests} onVoucherClicked={props.onVoucherClicked} onDetailsClicked={props.onDetailsClicked} onInvoiceClicked={props.onInvoiceClicked} />
     </Dialog>
   );
 }

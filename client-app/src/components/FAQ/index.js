@@ -52,7 +52,7 @@ export default function FAQ(props) {
       >
         <Close style={{ fill: "#fff" }} />
       </IconButton>
-      <div style={{ width: "100%", marginTop: 16 }}>
+      <div style={{ width: "100%", marginTop: 16, direction: 'rtl' }}>
         {data.map((qa, index) => (
           <div style={{ width: "100%" }}>
             <Typography
@@ -66,7 +66,7 @@ export default function FAQ(props) {
                 direction: 'rtl'
               }}
             >
-              <Typography style={{backgroundColor: 'yellow', borderRadius: 12, width: 24, height: 24, minWidth: 24, textAlign: 'center'}}>{index}</Typography>
+              <Typography style={{backgroundColor: 'yellow', borderRadius: 12, width: 24, height: 24, minWidth: 24, textAlign: 'center'}}>{index + 1}</Typography>
               <Typography style={{marginLeft: 8, marginRight: 8}}>{qa.question}</Typography>
             </Typography>
             <Typography

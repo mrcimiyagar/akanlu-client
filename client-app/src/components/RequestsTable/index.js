@@ -66,7 +66,8 @@ function createData(
   payment,
   view,
   voucher,
-  id
+  id,
+  guid
 ) {
   return {
     process,
@@ -81,6 +82,7 @@ function createData(
     view,
     voucher,
     id,
+    guid
   };
 }
 
@@ -212,7 +214,8 @@ export default function RequestsTable(props) {
       r.payment,
       "",
       "",
-      r._tblCheck_Id
+      r._tblCheck_Id,
+      r._tblCheck_Guid
     )
   );
 
@@ -342,6 +345,18 @@ export default function RequestsTable(props) {
                               }}
                             >
                               show voucher
+                            </Button>
+                            <Button
+                              style={{ width: "100%", marginTop: 24 }}
+                              onClick={() => {
+                                setBSO(false);
+                                setTimeout(() => {
+                                  setBottomSheetContent(null);
+                                  props.onInvoiceClicked(row.guid);
+                                }, 250);
+                              }}
+                            >
+                              show invoice
                             </Button>
                           </Card>
                         );

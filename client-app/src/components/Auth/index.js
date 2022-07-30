@@ -375,7 +375,7 @@ function Auth(props) {
               onClick={() => setRegister(false)}
             >
               <ListAltIcon sx={{ mr: 1 }} />
-              <div style={{ marginRight: 8 }}>To Login</div>
+              <div style={{ marginRight: 8 }}>Login</div>
             </Fab>
           </div>
         </div>
@@ -487,7 +487,7 @@ function Auth(props) {
               onClick={() => setRegister(true)}
             >
               <ListAltIcon />
-              <div style={{ marginRight: 8 }}>To Register</div>
+              <div style={{ marginRight: 8 }}>Register</div>
             </Fab>
           </div>
         </div>

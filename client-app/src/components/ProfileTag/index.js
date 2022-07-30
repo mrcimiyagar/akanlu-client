@@ -307,14 +307,14 @@ export default function ProfileTag(props) {
                   width: "calc(100% - 32px)",
                 }}
                 onClick={() => {
-                  if (window.confirm("آیا میخواهید خارج شوید ؟")) {
+                  if (window.confirm("Are you sure ?")) {
                     localStorage.removeItem("username");
                     localStorage.removeItem("password");
                     setAuthenticated(false);
                   }
                 }}
               >
-                خروج
+                Sign out
               </Button>
             </Paper>
           </div>

@@ -16,6 +16,8 @@ import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import InfoIcon from '@mui/icons-material/Info';
 import Pricing from "../Pricing";
+import Invoice from '../Invoice';
+import { setBSO } from "../../App";
 
 export default function Dashboard(props) {
   const [aboutUsOpen, setAboutUsOpen] = React.useState(false);
@@ -24,9 +26,11 @@ export default function Dashboard(props) {
   const [requestsOpen, setRequestsOpen] = React.useState(false);
   const [detailsOpen, setDetailsOpen] = React.useState(false);
   const [voucherOpen, setVoucherOpen] = React.useState(false);
+  const [invoiceOpen, setInvoiceOpen] = React.useState(false);
   const [selectedRequest, setSelectedRequest] = React.useState(false);
   const [priceData, setPriceData] = React.useState(undefined);
   const [showPricing, setShowPricing] = React.useState(false);
+  useEffect(() => setBSO(false), []);
   return (
     <div
       style={{
@@ -159,6 +163,10 @@ export default function Dashboard(props) {
           setSelectedRequest(id);
           setDetailsOpen(true);
         }}
+        onInvoiceClicked={(id) => {
+          setSelectedRequest(id);
+          setInvoiceOpen(true);
+        }}
       />
 
       <RequestDetails
@@ -171,6 +179,12 @@ export default function Dashboard(props) {
         setOpen={setVoucherOpen}
         open={voucherOpen}
         selectedId={selectedRequest}
+      />
+
+      <Invoice
+        onClose={() => setInvoiceOpen(false)}
+        show={invoiceOpen}
+        selectedGUID={selectedRequest}
       />
 
       <ContactUs setOpen={setContactUsOpen} open={contactUsOpen} />
