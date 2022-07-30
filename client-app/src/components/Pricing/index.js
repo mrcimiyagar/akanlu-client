@@ -24,9 +24,9 @@ export default function Pricing(props) {
   const [to, setTo] = React.useState(new Date());
   const setFrom = (dt) => {
     setFromInner(dt);
-    let dtTo = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate());
-    dtTo.setDate(dtTo.getDate() + 1);
-    setTo(dtTo);
+    var copiedDate = new Date(dt.getTime());
+    copiedDate.setDate(copiedDate.getDate() + 1);
+    setTo(copiedDate);
   };
   const [selectedCountryId2, setSelectedCountryId2] = React.useState(0);
   const [selectedCityId2, setSelectedCityId2] = React.useState(0);
@@ -325,7 +325,9 @@ export default function Pricing(props) {
                   />
                 )}
               />
-              <br />
+            </LocalizationProvider>
+            <br />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
               <MobileDatePicker
                 label="To"
                 inputFormat="MM/dd/yyyy"

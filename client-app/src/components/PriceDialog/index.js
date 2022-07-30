@@ -5,7 +5,6 @@ import {
   IconButton,
   InputBase,
   Slide,
-  TextField,
   Typography,
 } from "@material-ui/core";
 import React from "react";
@@ -30,6 +29,8 @@ const CustomText = (props) => {
 
 export default function PriceDialog({ onClose, data }) {
   const [show, setShow] = React.useState(true);
+  let processedRoomPriceRiali = data.totalRoomPriceRiali.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let processedRoomPriceDollar = data.totalRoomPriceDollar.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return (
     <Dialog
       style={{
@@ -77,26 +78,25 @@ export default function PriceDialog({ onClose, data }) {
       <div style={{ width: "calc(100% - 32px)", margin: 16 }}>
         <div style={{ width: "100%", marginTop: 72, borderRadius: 16 }}>
           <CustomText>
-            Currency Price Riali: {data.currencyPriceRiali}
+            <b>Currency Price Riali: </b>{data.currencyPriceRiali}
           </CustomText>
-          <CustomText>Room Price: $ {data.roomPrice}</CustomText>
+          <CustomText><b>Room Price: </b>$ {data.roomPrice}</CustomText>
           <CustomText>
-            Total Room Price Dollar: $ {data.totalRoomPriceDollar}
-          </CustomText>
-          <CustomText>
-            Total Room Price Riali: {data.totalRoomPriceRiali}
+            <b>Total Room Price : </b><br />
+            $ {processedRoomPriceDollar} <br />
+            {processedRoomPriceRiali} Rial
           </CustomText>
           {data.availableServices.map((service) => (
             <Card style={{ width: "100%", marginTop: 16, borderRadius: 16, backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'relative' }}>
-              <ExtensionIcon style={{fill: '#fff', width: 72, height: 72, position: 'absolute', left: '50%', transform: 'translate(-50%, 56px)'}}/>
-              <CardContent style={{color: '#fff', marginTop: 72 + 56 + 16}}>
+              <ExtensionIcon style={{ fill: '#fff', width: 72, height: 72, position: 'absolute', left: '50%', transform: 'translate(-50%, 56px)' }} />
+              <CardContent style={{ color: '#fff', marginTop: 72 + 56 + 16 }}>
                 <CustomText fontSize={13}>{service.extraEmkanat_Name}</CustomText>
                 <CustomText>Price: $ {service.extra_Value}</CustomText>
               </CardContent>
               <CardActions>
-                <InputBase style={{width: 'calc(100% - 16px)', marginLeft: 16, marginRight: 16, backgroundColor: '#fff', paddingLeft: 16, borderRadius: 24}} defaultValue={"0"} />
-                <Button size="large" style={{color: '#fff', fontSize: 23}}>+</Button>
-                <Button size="large" style={{color: '#fff', fontSize: 23}}>-</Button>
+                <InputBase style={{ width: 'calc(100% - 16px)', marginLeft: 16, marginRight: 16, backgroundColor: '#fff', paddingLeft: 16, borderRadius: 24 }} defaultValue={"0"} />
+                <Button size="large" style={{ color: '#fff', fontSize: 23 }}>+</Button>
+                <Button size="large" style={{ color: '#fff', fontSize: 23 }}>-</Button>
               </CardActions>
             </Card>
           ))}

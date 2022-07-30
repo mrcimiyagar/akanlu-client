@@ -186,7 +186,7 @@ export default function HotelProfileDialog(props) {
         </div>
         <div style={{ marginTop: 16, display: "flex", flexWrap: "wrap" }}>
           {rooms.map((room, index) => (
-            <div style={{ width: "50%", height: 230 }}>
+            <div style={{ width: "50%", height: 256 }}>
               <RoomCard room={room} isAtEnd={index % 2 === 1} onRoomClicked={props.onRoomSelected} />
             </div>
           ))}
